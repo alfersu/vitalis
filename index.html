@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitalis - Salud y Bienestar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-melon: #FF8B7B;
+            --secondary-melon: #FFB4A8;
+            --dark-melon: #E86A5A;
+            --light-melon: #FFD8D0;
+            --accent-coral: #FF6B6B;
+            --bg-cream: #FFF5F3;
+            --text-dark: #2c3e50;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(255, 139, 123, 0.2);
+            --shadow-hover: 0 8px 16px rgba(255, 139, 123, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 55px;
+            height: 55px;
+            position: relative;
+        }
+
+        .logo svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .brand-name {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(255, 139, 123, 0.95), rgba(232, 106, 90, 0.95)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23FFB4A8" width="1200" height="600"/><circle cx="200" cy="100" r="80" fill="%23FF8B7B" opacity="0.3"/><circle cx="900" cy="400" r="120" fill="%23FFD8D0" opacity="0.4"/><circle cx="600" cy="200" r="100" fill="%23E86A5A" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .cta-button {
+            background: var(--white);
+            color: var(--dark-melon);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: var(--light-melon);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 3px solid var(--white);
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--white);
+            color: var(--dark-melon);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-melon);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-melon), var(--accent-coral));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--secondary-melon);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--secondary-melon), var(--primary-melon));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(255, 139, 123, 0.3);
+        }
+
+        .service-icon svg {
+            width: 50px;
+            height: 50px;
+            fill: var(--white);
+        }
+
+        .service-card h3 {
+            color: var(--dark-melon);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--light-melon), var(--bg-cream));
+            padding: 5rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .about-image svg {
+            width: 70%;
+            height: 70%;
+            fill: var(--white);
+            opacity: 0.9;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--dark-melon);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-melon);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--secondary-melon), var(--primary-melon));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 4px 15px rgba(255, 139, 123, 0.3);
+        }
+
+        .member-name {
+            font-size: 1.4rem;
+            color: var(--dark-melon);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .member-specialty {
+            color: var(--primary-melon);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            padding: 5rem 2rem;
+            color: var(--white);
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--light-melon);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-melon);
+            box-shadow: 0 0 0 3px rgba(255, 139, 123, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-card-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--primary-melon);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-melon);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--secondary-melon);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-melon);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background: var(--secondary-melon);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .scroll-top svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Corazón estilizado con pulso -->
+                        <path d="M50 85 C20 60, 10 40, 10 28 C10 15, 20 10, 30 15 C40 20, 45 25, 50 35 C55 25, 60 20, 70 15 C80 10, 90 15, 90 28 C90 40, 80 60, 50 85 Z" 
+                              fill="#ffffff" stroke="none"/>
+                        <!-- Línea de pulso dentro del corazón -->
+                        <path d="M25 35 L35 35 L40 25 L45 45 L50 30 L55 35 L75 35" 
+                              stroke="#FF8B7B" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Brillo en el corazón -->
+                        <ellipse cx="35" cy="25" rx="8" ry="12" fill="#ffffff" opacity="0.3"/>
+                    </svg>
+                </div>
+                <span class="brand-name">Vitalis</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Bienvenido a Vitalis</h1>
+            <p>Tu salud y bienestar son nuestra prioridad. Cuidamos de ti con profesionalismo y calidez</p>
+            <div class="hero-buttons">
+                <button class="cta-button" onclick="scrollToSection('contacto')">Agenda tu Cita</button>
+                <button class="cta-button cta-button-secondary" onclick="scrollToSection('servicios')">Conoce Nuestros Servicios</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <p class="section-subtitle">Atención médica integral para toda la familia</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 50 50">
+                        <path d="M25 5 L30 15 L40 15 L32 23 L36 33 L25 26 L14 33 L18 23 L10 15 L20 15 Z"/>
+                    </svg>
+                </div>
+                <h3>Consulta General</h3>
+                <p>Atención médica personalizada con especialistas altamente calificados para el cuidado de tu salud integral</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 50 50">
+                        <circle cx="25" cy="15" r="8"/>
+                        <path d="M10 45 Q10 30 25 30 Q40 30 40 45 Z"/>
+                    </svg>
+                </div>
+                <h3>Medicina Preventiva</h3>
+                <p>Programas de prevención y chequeos regulares para mantener tu salud en óptimas condiciones</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 50 50">
+                        <rect x="15" y="10" width="20" height="30" rx="2"/>
+                        <line x1="20" y1="18" x2="30" y2="18" stroke="#fff" stroke-width="2"/>
+                        <line x1="20" y1="24" x2="30" y2="24" stroke="#fff" stroke-width="2"/>
+                        <line x1="20" y1="30" x2="28" y2="30" stroke="#fff" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Exámenes de Laboratorio</h3>
+                <p>Análisis clínicos con tecnología de punta y resultados rápidos y confiables</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 50 50">
+                        <rect x="10" y="15" width="30" height="25" rx="3"/>
+                        <circle cx="25" cy="27" r="6"/>
+                        <rect x="20" y="10" width="10" height="5"/>
+                    </svg>
+                </div>
+                <h3>Diagnóstico por Imágenes</h3>
+                <p>Radiografías, ecografías y estudios especializados con equipos de última generación</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 50 50">
+                        <path d="M15 20 Q15 10 25 10 Q35 10 35 20 L35 35 Q35 42 25 42 Q15 42 15 35 Z"/>
+                        <circle cx="25" cy="25" r="5"/>
+                    </svg>
+                </div>
+                <h3>Pediatría</h3>
+                <p>Cuidado especializado para los más pequeños con un enfoque cálido y profesional</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 50 50">
+                        <circle cx="25" cy="25" r="15"/>
+                        <path d="M25 15 L25 25 L35 30" stroke="#fff" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Atención 24/7</h3>
+                <p>Servicio de urgencias disponible las 24 horas del día, los 365 días del año</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="about-container">
+            <div class="about-image">
+                <svg viewBox="0 0 200 200">
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#fff" stroke-width="3"/>
+                    <path d="M100 40 L100 100 L140 100" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+                    <circle cx="100" cy="100" r="8" fill="#fff"/>
+                    <path d="M60 80 Q80 60 100 80 Q120 60 140 80" stroke="#fff" stroke-width="3" fill="none"/>
+                    <path d="M60 120 Q80 140 100 120 Q120 140 140 120" stroke="#fff" stroke-width="3" fill="none"/>
+                </svg>
+            </div>
+            <div class="about-content">
+                <h2>Sobre Vitalis</h2>
+                <p>Somos un centro médico comprometido con tu salud y bienestar. Con más de 15 años de experiencia, hemos construido una reputación basada en la excelencia médica, la calidez humana y la tecnología de vanguardia.</p>
+                <p>Nuestro equipo multidisciplinario está formado por profesionales altamente capacitados que trabajan en conjunto para brindarte la mejor atención posible, siempre con un toque humano y personalizado.</p>
+                <p>En Vitalis, creemos que la salud es el mayor tesoro, por eso nos esforzamos cada día en ofrecer servicios de calidad que mejoren tu calidad de vida.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Años de Experiencia</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Pacientes Atendidos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Especialistas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="equipo">
+        <h2 class="section-title">Nuestro Equipo Médico</h2>
+        <p class="section-subtitle">Profesionales comprometidos con tu bienestar</p>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">👨‍⚕️</div>
+                <div class="member-name">Dr. Carlos Mendoza</div>
+                <div class="member-role">Director Médico</div>
+                <div class="member-specialty">Medicina Interna</div>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">👩‍⚕️</div>
+                <div class="member-name">Dra. Ana Ramírez</div>
+                <div class="member-role">Especialista Senior</div>
+                <div class="member-specialty">Cardiología</div>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">👨‍⚕️</div>
+                <div class="member-name">Dr. Luis Torres</div>
+                <div class="member-role">Médico Especialista</div>
+                <div class="member-specialty">Pediatría</div>
+            </div>
+            <div class="team-member">
+                <div class="member-photo">👩‍⚕️</div>
+                <div class="member-name">Dra. María González</div>
+                <div class="member-role">Médica Especialista</div>
+                <div class="member-specialty">Ginecología</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <h2>Contáctanos</h2>
+            <p>Estamos aquí para atenderte. Agenda tu cita o envíanos tus consultas</p>
+            
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="+51 999 999 999">
+                </div>
+                <div class="form-group">
+                    <label for="servicio">Servicio de Interés</label>
+                    <select id="servicio" name="servicio">
+                        <option value="">Selecciona un servicio</option>
+                        <option value="consulta">Consulta General</option>
+                        <option value="preventiva">Medicina Preventiva</option>
+                        <option value="laboratorio">Exámenes de Laboratorio</option>
+                        <option value="imagenes">Diagnóstico por Imágenes</option>
+                        <option value="pediatria">Pediatría</option>
+                        <option value="urgencias">Urgencias</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar Mensaje</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Ubicación</h3>
+                    <p>Av. Salud 123, Lima - Perú</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p>+51 01 234 5678</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p>contacto@vitalis.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Vitalis</h3>
+                <p>Centro médico comprometido con tu salud y bienestar. Atención de calidad con calidez humana.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#equipo">Equipo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="#servicios">Consulta General</a></li>
+                    <li><a href="#servicios">Medicina Preventiva</a></li>
+                    <li><a href="#servicios">Laboratorio</a></li>
+                    <li><a href="#servicios">Diagnóstico por Imágenes</a></li>
+                    <li><a href="#servicios">Pediatría</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p><strong>Lunes a Viernes:</strong><br>8:00 AM - 8:00 PM</p>
+                <p><strong>Sábados:</strong><br>9:00 AM - 2:00 PM</p>
+                <p><strong>Urgencias 24/7</strong></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vitalis - Centro Médico. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </div>
+
+    <script>
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Mostrar mensaje de éxito
+            alert('¡Gracias por contactarnos! Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto contigo pronto.');
+            
+            // Limpiar formulario
+            event.target.reset();
+            
+            // En una aplicación real, aquí enviarías los datos al servidor
+            console.log('Datos del formulario:', data);
+        }
+
+        // Animación de los números en las estadísticas
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            
+            stats.forEach(stat => {
+                const target = stat.textContent;
+                const number = parseInt(target.replace(/\D/g, ''));
+                const suffix = target.replace(/[0-9]/g, '');
+                let current = 0;
+                const increment = number / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= number) {
+                        stat.textContent = number + suffix;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + suffix;
+                    }
+                }, 30);
+            });
+        }
+
+        // Observador para animar estadísticas cuando sean visibles
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const aboutSection = document.querySelector('.about');
+        if (aboutSection) {
+            observer.observe(aboutSection);
+        }
+
+        // Animación de aparición para las tarjetas de servicio
+        const serviceCards = document.querySelectorAll('.service-card');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        serviceCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s, transform 0.6s';
+            cardObserver.observe(card);
+        });
+    </script>
+</body>
+</html>
