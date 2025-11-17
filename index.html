@@ -59,7 +59,6 @@
         .logo {
             width: 55px;
             height: 55px;
-            position: relative;
         }
 
         .logo svg {
@@ -100,43 +99,23 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, rgba(255, 139, 123, 0.95), rgba(232, 106, 90, 0.95)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23FFB4A8" width="1200" height="600"/><circle cx="200" cy="100" r="80" fill="%23FF8B7B" opacity="0.3"/><circle cx="900" cy="400" r="120" fill="%23FFD8D0" opacity="0.4"/><circle cx="600" cy="200" r="100" fill="%23E86A5A" opacity="0.2"/></svg>');
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23FFB4A8" width="1200" height="600"/></svg>');
             background-size: cover;
-            background-position: center;
             color: var(--white);
             padding: 8rem 2rem;
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out;
         }
 
         .hero p {
             font-size: 1.4rem;
             margin-bottom: 2.5rem;
-            opacity: 0.95;
-            animation: fadeInUp 1.2s ease-out;
         }
 
         .hero-buttons {
@@ -144,7 +123,6 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1.4s ease-out;
         }
 
         .cta-button {
@@ -163,7 +141,6 @@
         .cta-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            background: var(--light-melon);
         }
 
         .cta-button-secondary {
@@ -177,18 +154,7 @@
             color: var(--dark-melon);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Services Section */
+        /* Services */
         .services {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -213,7 +179,6 @@
             width: 100px;
             height: 4px;
             background: linear-gradient(90deg, var(--primary-melon), var(--accent-coral));
-            border-radius: 2px;
         }
 
         .section-subtitle {
@@ -227,7 +192,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            margin-top: 3rem;
         }
 
         .service-card {
@@ -237,13 +201,11 @@
             box-shadow: var(--shadow);
             text-align: center;
             transition: all 0.3s;
-            border: 2px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
-            border-color: var(--secondary-melon);
         }
 
         .service-icon {
@@ -255,7 +217,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(255, 139, 123, 0.3);
         }
 
         .service-icon svg {
@@ -267,13 +228,6 @@
         .service-card h3 {
             color: var(--dark-melon);
             margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 1.05rem;
         }
 
         /* About Section */
@@ -299,14 +253,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: var(--shadow-hover);
         }
 
         .about-image svg {
             width: 70%;
             height: 70%;
             fill: var(--white);
-            opacity: 0.9;
         }
 
         .about-content h2 {
@@ -318,7 +270,6 @@
         .about-content p {
             font-size: 1.15rem;
             line-height: 1.8;
-            color: var(--text-dark);
             margin-bottom: 1.5rem;
         }
 
@@ -342,7 +293,6 @@
             font-weight: bold;
             color: var(--primary-melon);
             display: block;
-            margin-bottom: 0.5rem;
         }
 
         .stat-label {
@@ -375,7 +325,6 @@
 
         .team-member:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
         }
 
         .member-photo {
@@ -388,7 +337,6 @@
             align-items: center;
             justify-content: center;
             font-size: 4rem;
-            box-shadow: 0 4px 15px rgba(255, 139, 123, 0.3);
         }
 
         .member-name {
@@ -400,13 +348,11 @@
 
         .member-role {
             color: #666;
-            font-size: 1rem;
             margin-bottom: 1rem;
         }
 
         .member-specialty {
             color: var(--primary-melon);
-            font-size: 0.95rem;
             font-style: italic;
         }
 
@@ -432,7 +378,6 @@
             text-align: center;
             font-size: 1.2rem;
             margin-bottom: 3rem;
-            opacity: 0.95;
         }
 
         .contact-form {
@@ -451,7 +396,6 @@
             color: var(--text-dark);
             font-weight: 600;
             margin-bottom: 0.5rem;
-            font-size: 1.05rem;
         }
 
         .form-group input,
@@ -471,7 +415,6 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--primary-melon);
-            box-shadow: 0 0 0 3px rgba(255, 139, 123, 0.1);
         }
 
         .form-group textarea {
@@ -490,12 +433,11 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: var(--shadow);
         }
 
         .submit-button:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         .contact-info {
@@ -510,7 +452,6 @@
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            backdrop-filter: blur(10px);
         }
 
         .contact-card-icon {
@@ -528,11 +469,6 @@
             width: 30px;
             height: 30px;
             fill: var(--primary-melon);
-        }
-
-        .contact-card h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
         }
 
         /* Footer */
@@ -554,7 +490,6 @@
         .footer-section h3 {
             color: var(--secondary-melon);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
         }
 
         .footer-section ul {
@@ -603,7 +538,6 @@
 
         .social-icon:hover {
             transform: translateY(-3px);
-            background: var(--secondary-melon);
         }
 
         .social-icon svg {
@@ -612,11 +546,10 @@
             fill: var(--white);
         }
 
-        /* Scroll to top button */
         .scroll-top {
             position: fixed;
             bottom: 30px;
-            right: 30px;
+            left: 30px;
             width: 50px;
             height: 50px;
             background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
@@ -639,7 +572,6 @@
 
         .scroll-top:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
         }
 
         .scroll-top svg {
@@ -648,51 +580,459 @@
             fill: var(--white);
         }
 
+        /* ========== CHATBOT WHATSAPP ========== */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1001;
+        }
+
+        .chat-button {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(255, 139, 123, 0.5);
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(255, 139, 123, 0.5); }
+            50% { box-shadow: 0 4px 30px rgba(255, 139, 123, 0.8); }
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-button svg {
+            width: 35px;
+            height: 35px;
+            fill: var(--white);
+        }
+
+        .chat-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #25d366;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            width: 400px;
+            height: 600px;
+            background: #e5ddd5;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-window.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            color: var(--white);
+            padding: 0.7rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header-info {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .agent-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .agent-info h4 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .agent-status {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #e5ddd5;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260"><path fill="%23d1d1d1" fill-opacity="0.08" d="M30 30h40v40H30zm50 0h40v40H80zm50 0h40v40h-40zm50 0h40v40h-40zm50 0h40v40h-40zM30 80h40v40H30zm100 0h40v40h-40zm100 0h40v40h-40zM30 130h40v40H30zm50 0h40v40H80zm100 0h40v40h-40zm50 0h40v40h-40zM30 180h40v40H30zm100 0h40v40h-40zm100 0h40v40h-40zM80 230h40v40H80zm100 0h40v40h-40z"/></svg>');
+        }
+
+        .message {
+            margin-bottom: 0.5rem;
+            display: flex;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 75%;
+            padding: 0.5rem 0.8rem;
+            border-radius: 7.5px;
+            position: relative;
+            box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+        }
+
+        .message.agent .message-bubble {
+            background: var(--white);
+            border-top-left-radius: 0;
+        }
+
+        .message.agent .message-bubble::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            border-width: 0 8px 8px 0;
+            border-style: solid;
+            border-color: transparent var(--white) transparent transparent;
+        }
+
+        .message.user .message-bubble {
+            background: linear-gradient(135deg, var(--secondary-melon), var(--primary-melon));
+            color: var(--white);
+            border-top-right-radius: 0;
+        }
+
+        .message.user .message-bubble::before {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 0;
+            border-width: 8px 8px 0 0;
+            border-style: solid;
+            border-color: var(--secondary-melon) transparent transparent transparent;
+        }
+
+        .message-time {
+            font-size: 0.65rem;
+            margin-top: 0.2rem;
+            opacity: 0.6;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 0.5rem 0.8rem;
+            background: var(--white);
+            border-radius: 7.5px;
+            width: fit-content;
+            border-top-left-radius: 0;
+            position: relative;
+        }
+
+        .typing-indicator::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            border-width: 0 8px 8px 0;
+            border-style: solid;
+            border-color: transparent var(--white) transparent transparent;
+        }
+
+        .typing-indicator.active {
+            display: block;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .typing-dots span {
+            width: 6px;
+            height: 6px;
+            background: #999;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite;
+        }
+
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes bounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+
+        .quick-replies {
+            padding: 0.5rem;
+            background: #f0f0f0;
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .quick-reply-btn {
+            background: var(--white);
+            border: 1px solid var(--secondary-melon);
+            color: var(--dark-melon);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-reply-btn:hover {
+            background: var(--light-melon);
+        }
+
+        .chat-input-container {
+            padding: 0.5rem;
+            background: #f0f0f0;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border: none;
+            border-radius: 21px;
+            outline: none;
+            background: var(--white);
+        }
+
+        .send-button {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .send-button svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+        }
+
+        /* ========== ADMIN PANEL ========== */
+        .admin-toggle {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--dark-melon), var(--primary-melon));
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 139, 123, 0.3);
+            z-index: 999;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .admin-toggle:hover {
+            transform: translateY(-3px);
+        }
+
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 450px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+            transition: right 0.3s;
+            z-index: 1002;
+            overflow-y: auto;
+        }
+
+        .admin-panel.active {
+            right: 0;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            color: var(--white);
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+
+        .close-admin {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .admin-content {
+            padding: 2rem;
+        }
+
+        .admin-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .admin-section h3 {
+            color: var(--dark-melon);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--light-melon);
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--light-melon), var(--bg-cream));
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .message-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .admin-message {
+            background: var(--bg-cream);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-melon);
+        }
+
+        .admin-message-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .admin-message-user {
+            font-weight: bold;
+            color: var(--dark-melon);
+        }
+
+        .admin-message-time {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .respond-button {
+            background: linear-gradient(135deg, var(--primary-melon), var(--dark-melon));
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .config-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .config-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .config-group input,
+        .config-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--light-melon);
+            border-radius: 10px;
+        }
+
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .about-container { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; }
+            .chat-window {
+                width: calc(100vw - 20px);
+                height: calc(100vh - 100px);
+                right: 10px;
             }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
+            .admin-panel { width: 100%; }
+            .admin-toggle { right: 15px; top: 80px; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo-container">
                 <div class="logo">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Corazón estilizado con pulso -->
-                        <path d="M50 85 C20 60, 10 40, 10 28 C10 15, 20 10, 30 15 C40 20, 45 25, 50 35 C55 25, 60 20, 70 15 C80 10, 90 15, 90 28 C90 40, 80 60, 50 85 Z" 
-                              fill="#ffffff" stroke="none"/>
-                        <!-- Línea de pulso dentro del corazón -->
-                        <path d="M25 35 L35 35 L40 25 L45 45 L50 30 L55 35 L75 35" 
-                              stroke="#FF8B7B" stroke-width="3" fill="none" stroke-linecap="round"/>
-                        <!-- Brillo en el corazón -->
+                    <svg viewBox="0 0 100 100">
+                        <path d="M50 85 C20 60, 10 40, 10 28 C10 15, 20 10, 30 15 C40 20, 45 25, 50 35 C55 25, 60 20, 70 15 C80 10, 90 15, 90 28 C90 40, 80 60, 50 85 Z" fill="#ffffff"/>
+                        <path d="M25 35 L35 35 L40 25 L45 45 L50 30 L55 35 L75 35" stroke="#FF8B7B" stroke-width="3" fill="none"/>
                         <ellipse cx="35" cy="25" rx="8" ry="12" fill="#ffffff" opacity="0.3"/>
                     </svg>
                 </div>
@@ -708,105 +1048,78 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>Bienvenido a Vitalis</h1>
-            <p>Tu salud y bienestar son nuestra prioridad. Cuidamos de ti con profesionalismo y calidez</p>
-            <div class="hero-buttons">
-                <button class="cta-button" onclick="scrollToSection('contacto')">Agenda tu Cita</button>
-                <button class="cta-button cta-button-secondary" onclick="scrollToSection('servicios')">Conoce Nuestros Servicios</button>
-            </div>
+        <h1>Bienvenido a Vitalis</h1>
+        <p>Tu salud y bienestar son nuestra prioridad. Cuidamos de ti con profesionalismo y calidez</p>
+        <div class="hero-buttons">
+            <button class="cta-button" onclick="scrollToSection('contacto')">Agenda tu Cita</button>
+            <button class="cta-button cta-button-secondary" onclick="scrollToSection('servicios')">Conoce Nuestros Servicios</button>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="servicios">
         <h2 class="section-title">Nuestros Servicios</h2>
         <p class="section-subtitle">Atención médica integral para toda la familia</p>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 50 50">
-                        <path d="M25 5 L30 15 L40 15 L32 23 L36 33 L25 26 L14 33 L18 23 L10 15 L20 15 Z"/>
-                    </svg>
+                    <svg viewBox="0 0 50 50"><path d="M25 5 L30 15 L40 15 L32 23 L36 33 L25 26 L14 33 L18 23 L10 15 L20 15 Z"/></svg>
                 </div>
                 <h3>Consulta General</h3>
-                <p>Atención médica personalizada con especialistas altamente calificados para el cuidado de tu salud integral</p>
+                <p>Atención médica personalizada con especialistas altamente calificados</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 50 50">
-                        <circle cx="25" cy="15" r="8"/>
-                        <path d="M10 45 Q10 30 25 30 Q40 30 40 45 Z"/>
-                    </svg>
+                    <svg viewBox="0 0 50 50"><circle cx="25" cy="15" r="8"/><path d="M10 45 Q10 30 25 30 Q40 30 40 45 Z"/></svg>
                 </div>
                 <h3>Medicina Preventiva</h3>
-                <p>Programas de prevención y chequeos regulares para mantener tu salud en óptimas condiciones</p>
+                <p>Programas de prevención y chequeos regulares</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 50 50">
-                        <rect x="15" y="10" width="20" height="30" rx="2"/>
-                        <line x1="20" y1="18" x2="30" y2="18" stroke="#fff" stroke-width="2"/>
-                        <line x1="20" y1="24" x2="30" y2="24" stroke="#fff" stroke-width="2"/>
-                        <line x1="20" y1="30" x2="28" y2="30" stroke="#fff" stroke-width="2"/>
-                    </svg>
+                    <svg viewBox="0 0 50 50"><rect x="15" y="10" width="20" height="30" rx="2"/><line x1="20" y1="18" x2="30" y2="18" stroke="#fff" stroke-width="2"/></svg>
                 </div>
                 <h3>Exámenes de Laboratorio</h3>
-                <p>Análisis clínicos con tecnología de punta y resultados rápidos y confiables</p>
+                <p>Análisis clínicos con tecnología de punta</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 50 50">
-                        <rect x="10" y="15" width="30" height="25" rx="3"/>
-                        <circle cx="25" cy="27" r="6"/>
-                        <rect x="20" y="10" width="10" height="5"/>
-                    </svg>
+                    <svg viewBox="0 0 50 50"><rect x="10" y="15" width="30" height="25" rx="3"/><circle cx="25" cy="27" r="6"/></svg>
                 </div>
                 <h3>Diagnóstico por Imágenes</h3>
-                <p>Radiografías, ecografías y estudios especializados con equipos de última generación</p>
+                <p>Radiografías, ecografías y estudios especializados</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 50 50">
-                        <path d="M15 20 Q15 10 25 10 Q35 10 35 20 L35 35 Q35 42 25 42 Q15 42 15 35 Z"/>
-                        <circle cx="25" cy="25" r="5"/>
-                    </svg>
+                    <svg viewBox="0 0 50 50"><path d="M15 20 Q15 10 25 10 Q35 10 35 20 L35 35 Q35 42 25 42 Q15 42 15 35 Z"/><circle cx="25" cy="25" r="5"/></svg>
                 </div>
                 <h3>Pediatría</h3>
-                <p>Cuidado especializado para los más pequeños con un enfoque cálido y profesional</p>
+                <p>Cuidado especializado para los más pequeños</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg viewBox="0 0 50 50">
-                        <circle cx="25" cy="25" r="15"/>
-                        <path d="M25 15 L25 25 L35 30" stroke="#fff" stroke-width="2"/>
-                    </svg>
+                    <svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="15"/><path d="M25 15 L25 25 L35 30" stroke="#fff" stroke-width="2"/></svg>
                 </div>
                 <h3>Atención 24/7</h3>
-                <p>Servicio de urgencias disponible las 24 horas del día, los 365 días del año</p>
+                <p>Servicio de urgencias disponible las 24 horas</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="nosotros">
         <div class="about-container">
             <div class="about-image">
                 <svg viewBox="0 0 200 200">
                     <circle cx="100" cy="100" r="80" fill="none" stroke="#fff" stroke-width="3"/>
-                    <path d="M100 40 L100 100 L140 100" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M100 40 L100 100 L140 100" stroke="#fff" stroke-width="5"/>
                     <circle cx="100" cy="100" r="8" fill="#fff"/>
-                    <path d="M60 80 Q80 60 100 80 Q120 60 140 80" stroke="#fff" stroke-width="3" fill="none"/>
-                    <path d="M60 120 Q80 140 100 120 Q120 140 140 120" stroke="#fff" stroke-width="3" fill="none"/>
                 </svg>
             </div>
             <div class="about-content">
                 <h2>Sobre Vitalis</h2>
-                <p>Somos un centro médico comprometido con tu salud y bienestar. Con más de 15 años de experiencia, hemos construido una reputación basada en la excelencia médica, la calidez humana y la tecnología de vanguardia.</p>
-                <p>Nuestro equipo multidisciplinario está formado por profesionales altamente capacitados que trabajan en conjunto para brindarte la mejor atención posible, siempre con un toque humano y personalizado.</p>
-                <p>En Vitalis, creemos que la salud es el mayor tesoro, por eso nos esforzamos cada día en ofrecer servicios de calidad que mejoren tu calidad de vida.</p>
+                <p>Somos un centro médico comprometido con tu salud y bienestar. Con más de 15 años de experiencia, hemos construido una reputación basada en la excelencia médica.</p>
+                <p>Nuestro equipo multidisciplinario está formado por profesionales altamente capacitados.</p>
+                <p>En Vitalis, creemos que la salud es el mayor tesoro.</p>
                 <div class="about-stats">
                     <div class="stat-item">
                         <span class="stat-number">15+</span>
@@ -825,7 +1138,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
     <section class="team" id="equipo">
         <h2 class="section-title">Nuestro Equipo Médico</h2>
         <p class="section-subtitle">Profesionales comprometidos con tu bienestar</p>
@@ -857,7 +1169,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contacto">
         <div class="contact-container">
             <h2>Contáctanos</h2>
@@ -866,31 +1177,33 @@
             <form class="contact-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label for="nombre">Nombre Completo *</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
+                    <input type="text" id="nombre" required placeholder="Ingresa tu nombre">
                 </div>
                 <div class="form-group">
                     <label for="email">Correo Electrónico *</label>
-                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    <input type="email" id="email" required placeholder="tu@email.com">
                 </div>
                 <div class="form-group">
                     <label for="telefono">Teléfono *</label>
-                    <input type="tel" id="telefono" name="telefono" required placeholder="+51 999 999 999">
+                    <input type="tel" id="telefono" required placeholder="+51 999 999 999">
                 </div>
                 <div class="form-group">
                     <label for="servicio">Servicio de Interés</label>
-                    <select id="servicio" name="servicio">
+                    <select id="servicio">
                         <option value="">Selecciona un servicio</option>
                         <option value="consulta">Consulta General</option>
-                        <option value="preventiva">Medicina Preventiva</option>
-                        <option value="laboratorio">Exámenes de Laboratorio</option>
+                        <option value="laboratorio">Laboratorio</option>
                         <option value="imagenes">Diagnóstico por Imágenes</option>
                         <option value="pediatria">Pediatría</option>
                         <option value="urgencias">Urgencias</option>
+						<option value="preventiva">Medicina Preventiva</option>
+						<option value="intima">Íntima</option>
+						<option value="emocional">Soporte emocional</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="mensaje">Mensaje *</label>
-                    <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                    <textarea id="mensaje" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
                 </div>
                 <button type="submit" class="submit-button">Enviar Mensaje</button>
             </form>
@@ -898,27 +1211,21 @@
             <div class="contact-info">
                 <div class="contact-card">
                     <div class="contact-card-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                     </div>
                     <h3>Ubicación</h3>
                     <p>Av. Salud 123, Lima - Perú</p>
                 </div>
                 <div class="contact-card">
                     <div class="contact-card-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                     </div>
                     <h3>Teléfono</h3>
                     <p>+51 01 234 5678</p>
                 </div>
                 <div class="contact-card">
                     <div class="contact-card-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     </div>
                     <h3>Email</h3>
                     <p>contacto@vitalis.com</p>
@@ -927,22 +1234,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Vitalis</h3>
-                <p>Centro médico comprometido con tu salud y bienestar. Atención de calidad con calidez humana.</p>
+                <p>Centro médico comprometido con tu salud y bienestar.</p>
                 <div class="social-links">
-                    <a href="#" class="social-icon">
-                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
-                    </a>
+                    <a href="#" class="social-icon"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="#" class="social-icon"><svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+                    <a href="#" class="social-icon"><svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -961,7 +1261,7 @@
                     <li><a href="#servicios">Consulta General</a></li>
                     <li><a href="#servicios">Medicina Preventiva</a></li>
                     <li><a href="#servicios">Laboratorio</a></li>
-                    <li><a href="#servicios">Diagnóstico por Imágenes</a></li>
+                    <li><a href="#servicios">Diagnóstico</a></li>
                     <li><a href="#servicios">Pediatría</a></li>
                 </ul>
             </div>
@@ -977,112 +1277,255 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
+    <div class="admin-toggle" onclick="toggleAdmin()">👨‍💼 Panel Admin</div>
+
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h2>Panel de Administración</h2>
+            <button class="close-admin" onclick="toggleAdmin()">×</button>
+        </div>
+        <div class="admin-content">
+            <div class="admin-section">
+                <h3>📊 Estadísticas</h3>
+                <div class="stat-card">
+                    <h4>Mensajes Hoy</h4>
+                    <span class="stat-number" id="mensajesHoy">0</span>
+                </div>
+                <div class="stat-card">
+                    <h4>Usuarios Activos</h4>
+                    <span class="stat-number" id="usuariosActivos">0</span>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h3>💬 Mensajes Recientes</h3>
+                <div class="message-list" id="adminMessageList"></div>
+            </div>
+
+            <div class="admin-section">
+                <h3>⚙️ Configuración</h3>
+                <div class="config-group">
+                    <label>Nombre del Representante</label>
+                    <input type="text" id="agentName" value="Vitalis Asistente" onchange="updateAgentName()">
+                </div>
+                <div class="config-group">
+                    <label>Estado</label>
+                    <select id="agentStatus" onchange="updateAgentStatus()">
+                        <option value="online">En línea ✓</option>
+                        <option value="away">Ausente</option>
+                        <option value="offline">Desconectado</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-widget">
+        <div class="chat-button" onclick="toggleChat()">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <span class="chat-badge" id="chatBadge">1</span>
+        </div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="agent-avatar">👩‍⚕️</div>
+                    <div class="agent-info">
+                        <h4 id="displayAgentName">Vitalis Asistente</h4>
+                        <div class="agent-status" id="displayAgentStatus">En línea</div>
+                    </div>
+                </div>
+                <button class="close-chat" onclick="toggleChat()">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message agent">
+                    <div class="message-bubble">
+                        ¡Hola! Bienvenido a Vitalis 👋
+                        <div class="message-time">Ahora</div>
+                    </div>
+                </div>
+                <div class="message agent">
+                    <div class="message-bubble">
+                        ¿En qué puedo ayudarte hoy?
+                        <div class="message-time">Ahora</div>
+                    </div>
+                </div>
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="quick-replies" id="quickReplies">
+                <button class="quick-reply-btn" onclick="sendQuickReply('Agendar cita')">📅 Agendar cita</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('Consultar precios')">💰 Precios</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('Horarios')">🕐 Horarios</button>
+                <button class="quick-reply-btn" onclick="sendQuickReply('Ubicación')">📍 Ubicación</button>
+            </div>
+            <div class="chat-input-container">
+                <textarea class="chat-input" id="chatInput" placeholder="Escribe un mensaje" rows="1"></textarea>
+                <button class="send-button" onclick="sendMessage()">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
-        <svg viewBox="0 0 24 24">
-            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
     </div>
 
     <script>
-        // Smooth scroll to section
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            element.scrollIntoView({ behavior: 'smooth' });
+        const appState = { messages: [], adminMessages: [], stats: { mensajesHoy: 0, usuariosActivos: 1 } };
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Scroll to top
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Show/hide scroll to top button
-        window.addEventListener('scroll', function() {
-            const scrollTop = document.getElementById('scrollTop');
-            if (window.pageYOffset > 300) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTop');
+            btn.classList.toggle('visible', window.pageYOffset > 300);
+        });
+
+        function toggleChat() {
+            const win = document.getElementById('chatWindow');
+            const badge = document.getElementById('chatBadge');
+            win.classList.toggle('active');
+            if (win.classList.contains('active')) {
+                document.getElementById('chatInput').focus();
+                badge.style.display = 'none';
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            const container = document.getElementById('chatMessages');
+            const time = new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+
+            container.innerHTML += `<div class="message user"><div class="message-bubble">${escapeHtml(msg)}<div class="message-time">${time}</div></div></div>`;
+            appState.messages.push({ type: 'user', text: msg, time });
+            addToAdmin('Usuario', msg, time);
+
+            input.value = '';
+            container.scrollTop = container.scrollHeight;
+            document.getElementById('quickReplies').style.display = 'none';
+
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                const response = getResponse(msg);
+                container.innerHTML += `<div class="message agent"><div class="message-bubble">${response}<div class="message-time">${new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}</div></div></div>`;
+                container.scrollTop = container.scrollHeight;
+                updateStats();
+            }, 1500);
+        }
+
+        function sendQuickReply(txt) {
+            document.getElementById('chatInput').value = txt;
+            sendMessage();
+        }
+
+        function showTyping() {
+            document.getElementById('typingIndicator').classList.add('active');
+        }
+
+        function hideTyping() {
+            document.getElementById('typingIndicator').classList.remove('active');
+        }
+
+        function getResponse(msg) {
+            const lower = msg.toLowerCase();
+            const responses = {
+                cita: 'Para agendar una cita, llámanos al +51 01 234 5678. ¿Qué especialidad necesitas? 📋',
+                precio: 'La consulta general cuesta S/ 80. ¿Qué servicio te interesa? 💰',
+                horario: 'Horarios:<br>• Lunes a Viernes: 8:00 AM - 8:00 PM<br>• Sábados: 9:00 AM - 2:00 PM<br>• Urgencias 24/7 🕐',
+                ubicacion: 'Estamos en Av. Salud 123, Lima - Perú 📍',
+                servicio: 'Ofrecemos: Consulta General, Medicina Preventiva, Laboratorio, Diagnóstico por Imágenes, Pediatría y Urgencias 24/7 🏥',
+                gracias: '¡De nada! ¿Algo más? 😊',
+                hola: '¡Hola! 👋 ¿En qué puedo ayudarte?',
+            };
+
+            for (const [key, resp] of Object.entries(responses)) {
+                if (lower.includes(key)) return resp;
+            }
+
+            return ['Entiendo. ¿Más detalles? 🤔', 'Claro, te ayudo 💬', '¿Qué servicio te interesa? 🏥'][Math.floor(Math.random() * 3)];
+        }
+
+        function escapeHtml(txt) {
+            const div = document.createElement('div');
+            div.textContent = txt;
+            return div.innerHTML;
+        }
+
+        document.getElementById('chatInput').addEventListener('keypress', e => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
             }
         });
 
-        // Handle form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
+        setTimeout(() => {
+            const badge = document.getElementById('chatBadge');
+            if (!document.getElementById('chatWindow').classList.contains('active')) {
+                badge.style.display = 'flex';
+            }
+        }, 3000);
 
-            // Mostrar mensaje de éxito
-            alert('¡Gracias por contactarnos! Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto contigo pronto.');
-            
-            // Limpiar formulario
-            event.target.reset();
-            
-            // En una aplicación real, aquí enviarías los datos al servidor
-            console.log('Datos del formulario:', data);
+        function toggleAdmin() {
+            document.getElementById('adminPanel').classList.toggle('active');
         }
 
-        // Animación de los números en las estadísticas
-        function animateStats() {
-            const stats = document.querySelectorAll('.stat-number');
-            
-            stats.forEach(stat => {
-                const target = stat.textContent;
-                const number = parseInt(target.replace(/\D/g, ''));
-                const suffix = target.replace(/[0-9]/g, '');
-                let current = 0;
-                const increment = number / 50;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= number) {
-                        stat.textContent = number + suffix;
-                        clearInterval(timer);
-                    } else {
-                        stat.textContent = Math.floor(current) + suffix;
-                    }
-                }, 30);
+        function updateAgentName() {
+            document.getElementById('displayAgentName').textContent = document.getElementById('agentName').value;
+        }
+
+        function updateAgentStatus() {
+            const statusMap = { 'online': 'En línea ✓', 'away': 'Ausente', 'offline': 'Desconectado' };
+            document.getElementById('displayAgentStatus').textContent = statusMap[document.getElementById('agentStatus').value];
+        }
+
+        function addToAdmin(user, text, time) {
+            appState.adminMessages.unshift({ user, text, time });
+            updateAdminMessages();
+        }
+
+        function updateAdminMessages() {
+            const list = document.getElementById('adminMessageList');
+            list.innerHTML = '';
+            appState.adminMessages.slice(0, 10).forEach((msg, i) => {
+                list.innerHTML += `<div class="admin-message"><div class="admin-message-header"><span class="admin-message-user">${msg.user}</span><span class="admin-message-time">${msg.time}</span></div><div>${msg.text}</div><button class="respond-button" onclick="respondTo(${i})">Responder</button></div>`;
             });
         }
 
-        // Observador para animar estadísticas cuando sean visibles
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateStats();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const aboutSection = document.querySelector('.about');
-        if (aboutSection) {
-            observer.observe(aboutSection);
+        function respondTo(i) {
+            toggleAdmin();
+            toggleChat();
+            document.getElementById('chatInput').focus();
         }
 
-        // Animación de aparición para las tarjetas de servicio
-        const serviceCards = document.querySelectorAll('.service-card');
-        const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, index * 100);
-                    cardObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+        function updateStats() {
+            appState.stats.mensajesHoy++;
+            appState.stats.usuariosActivos = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('mensajesHoy').textContent = appState.stats.mensajesHoy;
+            document.getElementById('usuariosActivos').textContent = appState.stats.usuariosActivos;
+        }
 
-        serviceCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s, transform 0.6s';
-            cardObserver.observe(card);
-        });
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('¡Gracias por contactarnos! Te responderemos pronto.');
+            e.target.reset();
+        }
+
+        updateStats();
     </script>
 </body>
 </html>
